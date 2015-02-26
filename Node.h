@@ -5,7 +5,7 @@
 template <typename E>
 class Node
 {
-public:
+private:
 	E elem;
 	Node<E>* next;
 

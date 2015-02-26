@@ -23,6 +23,9 @@ public:
 	const E& getNode() const;
 	void advItr();
 	void printList();
+	Node<E>* insertionSort(Node<E>* head);
+	Node<E>* getHead();
+
 
 private:
 	Node<E>* head;
@@ -112,6 +115,57 @@ void LinkedList<E>::printList() {
             advItr();
         }
 	}
+}
+
+template <typename E>
+Node<E>* LinkedList<E>::insertionSort(Node<E>* head) {
+
+    if (head == NULL) {
+        return head;
+    }
+    Node<E> *unsorted = head->next;
+
+    while (unsorted != NULL) {
+        Node<E> *prev = NULL;
+        Node<E> *itr = head;
+        Node<E> *key = unsorted;
+
+        while (itr != NULL) {
+            if (itr->elem < key->elem) {
+                prev = itr;
+                itr = itr->next;
+            }
+            else {
+                break;
+            }
+        }
+        unsorted = unsorted->next;
+
+        if (itr == key) {
+            continue;
+        }
+
+        Node<E> *place = itr;
+
+        while (itr->next != key) {
+            itr = itr->next;
+        }
+        itr->next = unsorted;
+
+        if (prev == NULL) {
+            head = key;
+        }
+        else {
+            prev->next = key;
+        }
+        key->next = place;
+    }
+    return head;
+}
+
+template <typename E>
+Node<E>* LinkedList<E>::getHead() {
+    return head;
 }
 
 #endif // LINKEDLIST_H
