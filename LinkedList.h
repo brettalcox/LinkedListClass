@@ -2,6 +2,10 @@
 #define LINKEDLIST_H
 #include"Node.h"
 #include <cstdlib>
+#include <iostream>
+using std::cout;
+using std::endl;
+
 template <typename E>
 class LinkedList
 {
@@ -18,6 +22,7 @@ public:
 	bool hasNextItem();
 	const E& getNode() const;
 	void advItr();
+	void printList();
 
 private:
 	Node<E>* head;
@@ -99,5 +104,14 @@ void LinkedList<E>::advItr() {
 	}
 }
 
+template <typename E>
+void LinkedList<E>::printList() {
+    if (!isEmpty()) {
+        while (hasNextItem()) {
+            cout << getNode() << endl;
+            advItr();
+        }
+	}
+}
 
 #endif // LINKEDLIST_H
