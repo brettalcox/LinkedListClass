@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1424935068 source:/home/brettalcox/Code/LinkedList/LinkedListClass/LinkedList.cpp
+	"LinkedList.h"
+	"Node.h"
+	<cstdlib>
+
+1424934829 /home/brettalcox/Code/LinkedList/LinkedListClass/LinkedList.h
+	"Node.h"
+
+1424935155 /home/brettalcox/Code/LinkedList/LinkedListClass/Node.h
+
+1424935119 source:/home/brettalcox/Code/LinkedList/LinkedListClass/main.cpp
+	<iostream>
+	"LinkedList.h"
+	<string>
+
