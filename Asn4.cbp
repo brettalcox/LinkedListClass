@@ -32,7 +32,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="LinkedList.cpp" />
 		<Unit filename="LinkedList.h" />
 		<Unit filename="Node.h" />
 		<Unit filename="main.cpp" />

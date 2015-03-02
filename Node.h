@@ -8,6 +8,7 @@ class Node
 private:
 	E elem;
 	Node<E>* next;
+	Node<E>* prev;
 
 template <typename E1> friend class LinkedList;
 };
